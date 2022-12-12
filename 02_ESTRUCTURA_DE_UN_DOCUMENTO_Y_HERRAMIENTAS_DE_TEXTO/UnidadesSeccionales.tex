@@ -1,0 +1,114 @@
+% PREÁMBULO -------------------------------------
+
+% Definir la clase de documento
+\documentclass[a4paper, 11pt]{article}
+
+% Codificación de entrada
+\usepackage[utf8]{inputenc}
+
+% Idioma
+\usepackage[spanish]{babel}
+
+% Geometría
+\usepackage[left = 2cm, right = 2.5cm, top = 3cm, bottom = 2.2cm]{geometry}
+
+% Inserción de figuras
+\usepackage{graphicx}
+
+% Hipervínculos
+\usepackage{hyperref}
+
+\usepackage{titlesec}
+
+% Matemáticas
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% Crear párrafos
+\usepackage{lipsum}
+
+
+% Multi columnas
+\usepackage{multicol}
+
+%Colores
+\usepackage{xcolor}
+\definecolor{gris}{gray}{0.9}
+\definecolor{azul}{rgb}{0.0, 0.48, 0.65}
+
+% Información del documento
+\author{Manuel Merino Huaman}
+\title{Primera Sesión de \LaTeX}
+\date{26 de febrero de 2023}
+
+% ----------------------------------------------------
+
+
+\begin{document}
+
+    \maketitle
+    
+    \begin{abstract}
+        \lipsum[9]\\
+        
+        \noindent
+        \textbf{Palabras clave:} Machine Learning, Probabilidad, Espacio del Hilbert, Cáncer.
+    \end{abstract}
+    
+    
+    
+    
+    \begin{multicols}{2}
+        
+        \section{Introducción}\label{sec: intro}
+            \lipsum[3] \\
+            
+            \lipsum[9]\\
+            
+            \lipsum[1]
+        
+        \section{Metodología}\label{sec: met}
+            \lipsum[2]\\
+            
+            \lipsum[1] \lipsum[9]\\
+            
+            \lipsum[5]
+            
+            
+        
+        \section{Bases teóricas}\label{sec: base teo}
+            \lipsum[9]
+            \subsection{Machine learning}\label{subsec: ML}
+                \lipsum[11]
+                
+                \subsubsection{Modelos clasificación}\label{subsubsec: Clasi}
+                    \lipsum[1] \lipsum[4]\\
+                    
+                    \lipsum[2]\\
+                    
+                    \lipsum[5] \lipsum[1]
+                \subsubsection{Modelos de regresión}\label{subsubsec: Reg}
+                    \lipsum[9]\\
+                    
+                    \lipsum[7] \lipsum[2]
+                    
+            \subsection{Cáncer de pulmón}\label{subsec: Cancer}
+                \lipsum[1]
+            
+        \section{Análisis y Resultados}\label{sec: A y R}
+            \lipsum \\
+            
+            Como se mencionó en la sección \ref{subsubsec: Clasi}, podemos decir 
+    
+        \section{Conclusión}\label{sec: Conclu}
+            \lipsum[9] \lipsum[8]
+    \end{multicols}
+    
+    
+    
+    
+    
+        
+
+\end{document}

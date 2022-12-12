@@ -1,0 +1,299 @@
+% PREÁMBULO -------------------------------------
+  
+% Definir la clase de documento
+\documentclass[a4paper, 11pt]{article}
+
+% Codificación de entrada
+\usepackage[utf8]{inputenc}
+
+% Idioma
+\usepackage[spanish]{babel}
+
+% Geometría
+\usepackage[left = 2cm, right = 2.5cm, top = 3cm, bottom = 2.2cm]{geometry}
+
+% Inserción de figuras
+\usepackage{graphicx}
+%\usepackage{subcaption}
+
+% Hipervínculos
+\usepackage{hyperref}
+
+\usepackage{titlesec}
+
+% Matemáticas
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\newtheorem{defi}{Definición}[section]
+\newtheorem{lema}{Lema}[section]
+\newtheorem{teo}{Teorema}[section]
+\newtheorem{coro}{Corolario}[section]
+
+
+\usepackage{float}
+
+% Crear párrafos
+\usepackage{lipsum}
+
+% Multicolumnas
+\usepackage{multicol}
+
+
+% Espacios en párrafos
+\usepackage{setspace}
+
+
+
+
+%Colores
+\usepackage{xcolor}
+\definecolor{gris}{gray}{0.9}
+\definecolor{azul}{rgb}{0.0, 0.48, 0.65}
+
+% Información del documento
+\author{Manuel Merino Huaman}
+\title{Modo matemático en \LaTeX}
+\date{26 de febrero de 2023}
+
+% Usar el paquete tikz
+\usepackage{tikz}
+
+% Configuraciones en los listados de texto - Numerados
+%% Nivel 1
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\arabic{enumi}.}
+
+%% Nivel 2
+\renewcommand{\theenumii}{\alph{enumii}}
+\renewcommand{\labelenumii}{\arabic{enumii}.$\alph{enumii}$}
+
+%% Nivel 3
+\renewcommand{\theenumiii}{\roman{enumiii}}
+\renewcommand{\labelenumiii}{\roman{enumiii})}
+
+%% Nivel 4
+\renewcommand{\theenumiv}{\alph{enumiv}}
+\renewcommand{\labelenumiv}{\alph{enumiv}.}
+
+% Configuraciones en los listados de texto - No numerados
+%% Nivel 1
+\renewcommand{\labelitemi}{$\checkmark$}
+
+%% Nivel 2
+\renewcommand{\labelitemii}{$\bigstar$}
+
+%% Nivel 3
+\renewcommand{\labelitemiii}{$\dagger$}
+
+%% Nivel 4
+\renewcommand{\labelitemiv}{$\circledast$}
+
+% Creación de comandos
+%% Números naturales
+\newcommand{\N}{\mathbb{N}}
+%% Números enteros
+\newcommand{\Z}{\mathbb{Z}}
+%% Números racionales
+\newcommand{\Q}{\mathbb{Q}}
+%% Números irracionales
+\newcommand{\I}{\mathbb{I}}
+%% Números reales
+\newcommand{\R}{\mathbb{R}}
+%% Números complejos
+\newcommand{\C}{\mathbb{C}}
+
+% Crear funciones trigonométricas inversas
+\newcommand{\arccot}{\text{arccot}}
+\newcommand{\arcsec}{\text{arcsec}}
+\newcommand{\arccsc}{\text{arccsc}}
+
+
+\usepackage{rotating}
+\usepackage{tabularx} % Permite hacer cambios en el contenido de una tabla
+\usepackage{multirow}
+
+\usepackage{caption}
+%\captionsetup[table]{
+%   name = Tabla,
+%   labelsep = newline,
+%   justification = raggedright,
+%   singlelinecheck = false,
+%   labelfont = bf
+%   }
+
+ 
+% Máximo entero
+\usepackage{mathabx}
+
+
+% Entorno del documento
+\begin{document}
+
+    \maketitle
+
+    % Figure 1
+    \begin{figure}[ht]
+        \centering
+        \begin{tikzpicture}
+            \draw (0,0) -- (1,4) -- (3,0.5) -- (4,1);
+        \end{tikzpicture}
+        \caption{Mi primera imagen con Tikz}
+        \label{fig: Tikz1}
+    \end{figure}
+    
+    % Figure 2
+    \begin{figure}[ht]
+        \centering
+        \begin{tikzpicture}[xscale = 2, yscale = 0.5]
+            \draw[<-] (6,0) -- (0,0);
+            \draw[<-] (0,6) -- (0,0);
+        \end{tikzpicture}
+        \caption{Mi segunda imagen con Tikz}
+        \label{fig: Tikz2}
+    \end{figure}
+
+    % Figure 3
+    \begin{figure}[ht]
+        \centering
+        \begin{tikzpicture}
+            \draw[<-,dashed, ultra thick] (0,3) -- (5,3);
+            \draw[dotted, very thick] (0,2) -- (5,2);
+            \draw[red, thick] (0,1) -- (5,1);
+            \draw[dashed, semithick] (0,0) -- (5,0);
+            \draw[azul, dashed, thin] (0,-1) -- (5,-1);
+            \draw[very thin] (0,-2) -- (5,-2);
+            \draw[ultra thin] (0,-3) -- (5,-3);
+        \end{tikzpicture}
+        \caption{Mi tercera imagen con Tikz}
+        \label{fig: Tikz3}
+    \end{figure}
+
+
+    % Figure 4
+    \begin{figure}[ht]
+        \centering
+        \begin{tikzpicture}
+            \draw[red, dashed, very thick, fill = lightgray] (1,1) circle[radius = 2];
+            \draw[fill = black] (1,1) circle[radius = 0.05];
+            \node[below right] at (1,1) {$(1,1)$};
+            \draw (-3,-4) rectangle (1,-2);
+            \draw[<-] (1,1) -- (1,3) -- (1,3) -- (1,3); 
+            \draw (6,0) -- (-6,0);
+            \draw (0,6) -- (0,-6);
+        \end{tikzpicture}
+        \caption{Mi cuarta imagen con Tikz}
+        \label{fig: Tikz4}
+    \end{figure}
+
+
+    % Figure 5
+    \begin{figure}[ht]
+       \centering
+       \begin{tikzpicture}
+            \draw[red, dashed, very thick, fill = lightgray] (1, 1) circle[radius = 2];
+            \draw[fill = black] (1, 1) circle[radius = 0.05];
+            \node[below right] at (1, 1) {$(1, 1)$};
+            \draw (-3, -4) rectangle (1, -2);
+            \draw[darkgray, dashed] (-6, 1) -- (6, 1);
+            \draw[darkgray, dashed] (-6, 2) -- (6, 2);
+            \draw[darkgray, dashed] (-6, 3) -- (6, 3);
+            \draw[darkgray, dashed] (-6, 4) -- (6, 4);
+            \draw[darkgray, dashed] (-6, 5) -- (6, 5);
+            \draw[darkgray, dashed] (1, -5) -- (1, 5);
+            \draw[darkgray, dashed] (2, -5) -- (2, 5);
+            \draw[darkgray, dashed] (3, -5) -- (3, 5);
+            \draw[darkgray, dashed] (4, -5) -- (4, 5);
+            \draw[darkgray, dashed] (5, -5) -- (5, 5);
+            \draw[darkgray, dashed] (-1, -5) -- (-1, 5);
+            \draw[darkgray, dashed] (-2, -5) -- (-2, 5);
+            \draw[darkgray, dashed] (-3, -5) -- (-3, 5);
+            \draw[darkgray, dashed] (-4, -5) -- (-4, 5);
+            \draw[darkgray, dashed] (-5, -5) -- (-5, 5);
+            \draw[<-] (6, 0) -- (-6, 0);
+            \draw[<-] (0, 6) -- (0, -6);
+       \end{tikzpicture}
+       \caption{Plano cartesiano}
+       \label{fig: tikz 5}
+   \end{figure}
+
+   % Figure 6
+    \begin{figure}[ht]
+        \centering
+        \begin{tikzpicture}[scale = 0.26]
+            \draw[lightgray, fill = gris] (-6,-6) rectangle (6,6);
+            \draw[dashed, white ] (-6,-6) grid (6,6);
+            
+            \draw[<-] (6,0) node[below right] {$x$} (-6,0);
+            \draw[<-] (0,6) node[below left] {$y$} (0,-6);
+
+            \draw[azul, domain = -3:1] plot ({\x}, {pow(\x,2) - 3});
+            \draw[red, domain = 1:5] plot({\x}, {sqrt(\x) - 3});
+
+            \draw[black, domain = -5:1.7] plot({\x}, {exp(\x)});
+            \draw[black, domain = -5:1.7] plot({\x}, {-exp(\x)});
+            
+        \end{tikzpicture}
+        \caption{Plano cartesiano 2}
+        \label{fig: Tikz6}
+    \end{figure}
+
+
+    % Figura 7
+    \begin{figure}[ht]
+        \centering
+        \begin{tikzpicture}[scale = 2, samples = 70]
+            \fill[red] (0,0) -- plot[domain = 0:pi] ({\x}, {sin(\x r)}) -- (pi,0) -- cycle;
+            \draw[dashed, xstep = pi/2] (-pi/4, -1) grid (9*pi/4, 1);
+        
+            \draw[<-] (7,0) node[below right] {$x$} -- (-0.5,0); 
+            \draw[<-] (0,1.25) node[above left] {$y$} -- (0, -1.25); 
+
+            \node[below right] at (pi/2, 0) {$\frac{\pi}{2}$};
+            \node[below right] at (pi, 0) {$\pi$};
+            \node[below right] at (3*pi/2, 0) {$\frac{3\pi}{2}$};
+            \node[below right] at (2*pi, 0) {$2\pi$};
+
+            \node[left] at (0,1) {$1$};
+            \node[left] at (0,-1) {$-1$};
+     
+            \draw[very thick, azul, domain = -0.5 + 0:2*pi + 0.5] plot({\x}, {sin(\x r)});
+            
+        \end{tikzpicture}
+        \caption{Función seno}
+        \label{fig: Tikz7}
+    \end{figure}
+
+    % Figura 7
+    \begin{figure}[ht]
+        \centering
+        \begin{tikzpicture}
+            \draw[<-] (5,0) node[below right] {$x$} -- (-3,0);
+            \draw[<-] (0,8) -- (0,-8);
+
+            \draw[azul, domain = -pi/2 + 0.15:pi/2 -0.15] plot({\x}, {tan(\x r)});
+            \draw[azul, domain = pi/2 + 0.125:3*pi/2 -0.125] plot({\x}, {tan(\x r)});
+
+            \draw[red, dashed, very thick] (-pi/2,8) -- (-pi/2,-8);
+            \draw[red, dashed, very thick] (pi/2,8) -- (pi/2,-8);
+            \draw[red, dashed, very thick] (3*pi/2,8) -- (3*pi/2,-8);
+
+            
+        \end{tikzpicture}
+        \caption{Caption}
+        \label{fig:my_label}
+    \end{figure}
+    
+    
+\end{document}
+
+
+
+
+
+
+
+
+
+

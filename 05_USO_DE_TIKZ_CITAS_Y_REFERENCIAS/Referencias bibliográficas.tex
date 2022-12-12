@@ -1,0 +1,198 @@
+% PREÁMBULO -------------------------------------
+  
+% Definir la clase de documento
+\documentclass[a4paper, 11pt]{article}
+
+% Codificación de entrada
+\usepackage[utf8]{inputenc}
+
+% Idioma
+\usepackage[spanish]{babel}
+
+% Geometría
+\usepackage[left = 2cm, right = 2.5cm, top = 3cm, bottom = 2.2cm]{geometry}
+
+% Inserción de figuras
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{hyperref}
+\usepackage{url}
+
+
+
+% Hipervínculos
+\usepackage{hyperref}
+
+\usepackage{titlesec}
+
+% Matemáticas
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\newtheorem{defi}{Definición}[section]
+\newtheorem{lema}{Lema}[section]
+\newtheorem{teo}{Teorema}[section]
+\newtheorem{coro}{Corolario}[section]
+
+
+\usepackage{float}
+
+% Crear párrafos
+\usepackage{lipsum}
+
+% Multicolumnas
+\usepackage{multicol}
+
+
+% Espacios en párrafos
+\usepackage{setspace}
+
+
+
+
+%Colores
+\usepackage{xcolor}
+\definecolor{gris}{gray}{0.9}
+\definecolor{azul}{rgb}{0.0, 0.48, 0.65}
+
+% Información del documento
+\author{Manuel Merino Huaman}
+\title{Referencias bibliográficas en \LaTeX}
+\date{26 de febrero de 2023}
+
+% Usar el paquete tikz
+\usepackage{tikz}
+
+% Configuraciones en los listados de texto - Numerados
+%% Nivel 1
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\arabic{enumi}.}
+
+%% Nivel 2
+\renewcommand{\theenumii}{\alph{enumii}}
+\renewcommand{\labelenumii}{\arabic{enumii}.$\alph{enumii}$}
+
+%% Nivel 3
+\renewcommand{\theenumiii}{\roman{enumiii}}
+\renewcommand{\labelenumiii}{\roman{enumiii})}
+
+%% Nivel 4
+\renewcommand{\theenumiv}{\alph{enumiv}}
+\renewcommand{\labelenumiv}{\alph{enumiv}.}
+
+% Configuraciones en los listados de texto - No numerados
+%% Nivel 1
+\renewcommand{\labelitemi}{$\checkmark$}
+
+%% Nivel 2
+\renewcommand{\labelitemii}{$\bigstar$}
+
+%% Nivel 3
+\renewcommand{\labelitemiii}{$\dagger$}
+
+%% Nivel 4
+\renewcommand{\labelitemiv}{$\circledast$}
+
+% Creación de comandos
+%% Números naturales
+\newcommand{\N}{\mathbb{N}}
+%% Números enteros
+\newcommand{\Z}{\mathbb{Z}}
+%% Números racionales
+\newcommand{\Q}{\mathbb{Q}}
+%% Números irracionales
+\newcommand{\I}{\mathbb{I}}
+%% Números reales
+\newcommand{\R}{\mathbb{R}}
+%% Números complejos
+\newcommand{\C}{\mathbb{C}}
+
+% Crear funciones trigonométricas inversas
+\newcommand{\arccot}{\text{arccot}}
+\newcommand{\arcsec}{\text{arcsec}}
+\newcommand{\arccsc}{\text{arccsc}}
+
+
+\usepackage{rotating}
+\usepackage{tabularx} % Permite hacer cambios en el contenido de una tabla
+\usepackage{multirow}
+
+\usepackage{caption}
+%\captionsetup[table]{
+%   name = Tabla,
+%   labelsep = newline,
+%   justification = raggedright,
+%   singlelinecheck = false,
+%   labelfont = bf
+%   }
+
+ 
+% Máximo entero
+\usepackage{mathabx}
+
+
+% paquete para  el manejo de bibliografias
+\usepackage{natbib}
+
+
+
+
+% Entorno del documento
+\begin{document}
+
+    \maketitle
+
+    % Section 1
+    \section{Introducción}
+        \lipsum 
+
+        
+    % Section 2
+    \section{Planteamiento del problema}
+        \lipsum[2] \lipsum[4]  
+
+        
+    % Section 3
+    \section{Metodología}
+        \lipsum[3] \lipsum[7] 
+
+    % Section 4
+    \section{Marco teórico}
+        \lipsum[5] \lipsum[9] 
+
+        
+    % Section 5
+    \section{Análisis y resultados}
+        \lipsum[3] \lipsum[5]
+
+        Como menciona \cite{Zorich-2015}, se dice 
+        \lipsum[10]
+        
+    % Section 6
+    \section{Conclusiones}
+        \lipsum[10] Existen dos soluciones \citealp{Zorich-2015}. 
+        
+        Como mencionan \cite{Merino-2022}, es posible tomar \lipsum[8]
+
+        Según \cite{Kim-2008}, tenemos que 
+
+        \href{https://sci-hub.se/10.1137/060677586}{https://sci-hub.se/10.1137/060677586}
+
+    % Bibliografía 
+    \bibliography{Biblio.bib}
+        %% Normalmente piden en Apa
+        \bibliographystyle{apalike2}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% CONTINUAR DEL MINUTO 1:40:00 
+
+
+
+
+
+    
+\end{document}

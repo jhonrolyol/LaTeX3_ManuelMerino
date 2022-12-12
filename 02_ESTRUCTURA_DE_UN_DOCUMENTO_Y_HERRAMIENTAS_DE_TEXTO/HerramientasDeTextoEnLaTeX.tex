@@ -1,0 +1,222 @@
+% PREÁMBULO -------------------------------------
+  
+% Definir la clase de documento
+\documentclass[a4paper, 11pt]{article}
+
+% Codificación de entrada
+\usepackage[utf8]{inputenc}
+
+% Idioma
+\usepackage[spanish]{babel}
+
+% Geometría
+\usepackage[left = 2cm, right = 2.5cm, top = 3cm, bottom = 2.2cm]{geometry}
+
+% Inserción de figuras
+\usepackage{graphicx}
+
+% Hipervínculos
+\usepackage{hyperref}
+
+\usepackage{titlesec}
+
+% Matemáticas
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% Crear párrafos
+\usepackage{lipsum}
+
+% Multicolumnas
+\usepackage{multicol}
+
+
+% Espacios en párrafos
+\usepackage{setspace}
+
+%Colores
+\usepackage{xcolor}
+\definecolor{gris}{gray}{0.9}
+\definecolor{azul}{rgb}{0.0, 0.48, 0.65}
+
+% Información del documento
+\author{Manuel Merino Huaman}
+\title{Herramientas de texto en \LaTeX}
+\date{26 de febrero de 2023}
+
+% Configuraciones en los listados de texto - Numerados
+%% Nivel 1
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\arabic{enumi}.}
+
+%% Nivel 2
+\renewcommand{\theenumii}{\alph{enumii}}
+\renewcommand{\labelenumii}{\arabic{enumii}.$\alph{enumii}$}
+
+%% Nivel 3
+\renewcommand{\theenumiii}{\roman{enumiii}}
+\renewcommand{\labelenumiii}{\roman{enumiii})}
+
+%% Nivel 4
+\renewcommand{\theenumiv}{\alph{enumiv}}
+\renewcommand{\labelenumiv}{\alph{enumiv}.}
+
+% Configuraciones en los listados de texto - No numerados
+%% Nivel 1
+\renewcommand{\labelitemi}{$\checkmark$}
+
+%% Nivel 2
+\renewcommand{\labelitemii}{$\bigstar$}
+
+%% Nivel 3
+\renewcommand{\labelitemiii}{$\dagger$}
+
+%% Nivel 4
+\renewcommand{\labelitemiv}{$\circledast$}
+
+
+% Entorno del documento
+\begin{document}
+
+\maketitle % Genera el título
+
+\section{Alineaciones de texto}
+    
+    \subsection{Izquierda}
+        \begin{flushleft}
+            \lipsum[9]
+        \end{flushleft}
+    
+    \subsection{Derecha}
+        \begin{flushright}
+            \lipsum[8]
+        \end{flushright}
+        
+    \subsection{Centrado}
+        \begin{center}
+            \lipsum[9]
+        \end{center}
+        
+        
+        
+    ``Hola Manuel''
+    
+    \newpage
+    
+    \section{Textos citados}
+    \LaTeX\, imprime textos con ambos lados alineados, cubriendo el ancho especificado de una página.
+    \begin{quotation}
+        \begin{spacing}{1.2}
+            ``Las declaraciones citadas también se imprimen con ambos lados alineados, pero con un ancho reducido. Las declaraciones citadas también se imprimen con ambos lados alineados, pero con un ancho reducido. Las declaraciones citadas también se imprimen con ambos lados alineados, pero con un ancho reducido. Las declaraciones citadas también se imprimen con ambos lados alineados, pero con un ancho reducido''
+        \end{spacing}      
+        \begin{flushright}
+            {\it - Anónimo}
+        \end{flushright}
+    \end{quotation}
+    
+    \section{Párrafos}
+    \par \parindent = 0mm
+    Esto es un párrafo escrito para la clase de herramientas de texto en \LaTeX, y nos pemite conocer mejor como funciona los espacio, indentaciones y entre o más. Esto es un párrafo escrito para la clase de herramientas de texto en \LaTeX, y nos pemite conocer mejor como funciona los espacio, indentaciones y entre o más. Esto es un párrafo escrito para la clase de herramientas de texto en \LaTeX, y nos pemite conocer mejor como funciona los espacio, indentaciones y entre o más. Esto es un párrafo escrito para la clase de herramientas de texto en \LaTeX, y nos pemite conocer mejor como funciona los espacio, indentaciones y entre o más.\\
+    
+    \par
+    Esto es un párrafo escrito para la clase de herramientas de texto en \LaTeX, y nos pemite conocer mejor como funciona los espacio, indentaciones y entre o más.
+    Esto es un párrafo escrito para la clase de herramientas de texto en \LaTeX, y nos pemite conocer mejor como funciona los espacio, indentaciones y entre o más.
+    
+    
+    
+    \section{Espacios horizontales y verticales}
+        
+        \noindent
+        x \quad y\\
+        x \qquad y\\
+        x y\\
+        x \,y\\
+        x \:y\\
+        x \;y\\
+        x \hspace{4cm} y\\
+        Apellidos y Nombres: \hfill Fecha: 28/10/22\\
+        
+        
+        x\\
+        
+        \vspace{1cm}
+        y\\
+        
+        
+        \vfill \hfill Manuel Merino\\
+        .\hfill Profesor de \LaTeX
+        
+    \section{Notas a pie de página}
+      Manuel \textcolor{blue}{\footnote{creador de Aprendiendo\, \LaTeX}} es el profesor del curso de
+      
+    \section{Multi - columnas}
+       \begin{multicols}{2}
+         \lipsum[2] \lipsum[1]    
+       \end{multicols}
+    
+    \section{Listados de textos}
+        \subsection{Numerados}
+           \begin{enumerate} % Nivel 1
+               \item Perú
+                 \begin{enumerate} % Nivel 2
+                     \item Lima
+                        \begin{enumerate} % Nivel 3
+                            \item Surquillo
+                               \begin{enumerate} % Nivel 4
+                                 \item Surquillo
+                                 \item Mirafroles
+                                 \item San Isidro
+                                 \item Pueblo Libre
+                               \end{enumerate}
+                            \item Mirafroles
+                            \item San Isidro
+                            \item Pueblo Libre
+                        \end{enumerate}
+                     \item Arequipa
+                     \item Ancash
+                     \item Puno
+                 \end{enumerate}
+               \item Colombia
+                 \begin{enumerate}
+                     \item Bogotá
+                     \item Medellin
+                     \item Barranquilla
+                 \end{enumerate}
+               \item Panamá
+               \item México
+               \item Chile
+           \end{enumerate}
+           
+     \section{Listados no numerados} 
+        \begin{itemize} % Nivel 1
+            \item Perú
+                \begin{itemize} % Nivel 2
+                    \item Lima
+                       \begin{itemize} % Nivel 3
+                            \item Surquillo
+                               \begin{itemize} % Nivel 4
+                                 \item Surquillo
+                                 \item Mirafroles
+                                 \item San Isidro
+                                 \item Pueblo Libre
+                               \end{itemize}
+                            \item Mirafroles
+                            \item San Isidro
+                            \item Pueblo Libre
+                        \end{itemize}
+                    \item Arequipa
+                    \item Ancash
+                    \item Puno
+                \end{itemize}
+            \item Colombia
+            \item Panamá
+            \item México
+            \item Chile
+        \end{itemize}
+        
+     \section{}
+
+
+
+\end{document}

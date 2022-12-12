@@ -1,0 +1,116 @@
+
+% Preamble
+    \documentclass[aspectratio = 169, 11pt ]{beamer}
+
+
+% Packages
+    \usepackage[utf8]{inputenc}
+    \usepackage[spanish]{babel}
+    \usepackage[T1]{fontenc}
+    \usepackage{graphicx}
+    \usepackage{amsfonts}
+    \usepackage{amsmath}
+    \usepackage{amssymb}
+    \usepackage{lipsum}
+
+% Tikz
+    \usepackage{tikz}
+    
+
+% Theme
+    \usetheme{Madrid}
+
+% Modificamos el color
+    \usepackage{xcolor}
+    \definecolor{azul}{rgb}{0.17, 0.40, 0.69}
+
+    \setbeamercolor{structure}{fg = azul} % Se modifica el color de la estructura
+
+% Justificación
+    \usepackage{ragged2e}
+
+% Title
+    \title{Mi primer documento en Beamer con \LaTeX}
+    \subtitle{Sesión 6}
+    \author[Manuel Merino]{Manuel Merino Huaman}
+    \date{\today} 
+    \institute[UNMSM]{
+        Bach. Computación Científica - UNMSM
+    }
+    
+    
+% Document
+    \begin{document}
+        % Title
+            {
+            \usebackgroundtemplate{\includegraphics{06_PRESENTACIÓN_Y_PÓSTER_CON_BEAMER/Portada.pdf}}            \begin{frame}[plain]
+                   \begin{center}
+                       {\Large \textsc{\textrm{Universidad Nacional Mayor de San Marcos}}}\\
+                       {\textrm{Universidad del Perú. Decana de América}}\\
+                       \vspace{1cm}
+                       \textbf{\textsc{\textrm{\inserttitle}}}\\ % Para usar en negrita ([T1]{fontenc})
+                       \insertsubtitle
+                   \end{center} 
+              \end{frame}
+            }
+
+        % Table of contents
+            \begin{frame}{Contenido}
+                \tableofcontents
+            \end{frame}
+        
+        % Section 1
+            \section{Introducción}
+                \begin{frame}{Introducción}
+                    \justifying
+                    \lipsum[8]
+                \end{frame}
+
+        % Section 2
+            \section{Objetivos}
+                \begin{frame}{Objetivos}
+                        \begin{figure}[ht]
+                            \centering
+                            \begin{tikzpicture}[scale = 1.6, samples = 70]
+                            \fill[red] (0,0) -- plot[domain = 0:pi] ({\x}, {sin(\x r)}) -- (pi,0) -- cycle;
+                            \draw[dashed, xstep = pi/2] (-pi/4, -1) grid (9*pi/4, 1);
+                            \draw[<-] (7,0) node[below right] {$x$} -- (-0.5,0); 
+                            \draw[<-] (0,1.25) node[above left] {$y$} -- (0, -1.25); 
+                            \node[below right] at (pi/2, 0) {$\frac{\pi}{2}$};
+                            \node[below right] at (pi, 0) {$\pi$};
+                            \node[below right] at (3*pi/2, 0) {$\frac{3\pi}{2}$};
+                            \node[below right] at (2*pi, 0) {$2\pi$};
+                            \node[left] at (0,1) {$1$};
+                            \node[left] at (0,-1) {$-1$};
+                            \draw[very thick, azul, domain = -0.5 + 0:2*pi + 0.5] plot({\x}, {sin(\x r)});
+                        \end{tikzpicture}
+                        \caption{Función seno}
+                        \label{fig: Tikz7}
+                    \end{figure}
+                \end{frame}
+                
+        % Section 3
+            \section{Metodología}
+                \begin{frame}{Metodología}
+                    Hola
+                \end{frame}
+            
+        % Section 4
+            \section{Análisis y resultados}
+                \begin{frame}{Análisis y resultados}
+                    Hola
+                \end{frame}
+
+        % Section 5
+            \section{Conclusiones}
+                \begin{frame}{Conclusiones}
+                    Hola
+                \end{frame}
+        
+    \end{document}
+
+
+
+
+
+

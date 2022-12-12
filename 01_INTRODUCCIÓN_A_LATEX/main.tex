@@ -1,0 +1,66 @@
+% PREÁMBULO --------------------------------------------------------------
+
+% Definir la clase de documento
+\documentclass[a4paper,11pt]{article}
+
+% Codificación de entrada
+\usepackage[utf8]{inputenc}
+
+% Idioma
+\usepackage[spanish]{babel}
+
+% Geometría
+\usepackage[left = 2cm, right = 2.5cm, top = 3cm, bottom = 2.2cm]{geometry}
+
+% Inserción de figuras
+\usepackage{graphicx}
+
+% Matemáticas
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+
+% Colores
+\usepackage{xcolor}
+\definecolor{amaranth}{rgb}{0.9, 0.17, 0.31}
+
+
+
+% Información del documento
+\author{Manuel Merino Huaman}
+\title{Primera Sesión de \LaTeX}
+\date{26 de febrero de 2023}
+
+% ---------------------------------------------------------------------------
+
+% Entorno document
+\begin{document}
+    \maketitle
+    
+    \noindent  
+    Hola, soy Manuel\\
+    \textsf{Hola, soy Manuel}\\
+    \texttt{Hola, soy Manuel}
+       
+    \noindent  
+    Hola, soy Manuel\\
+    {\bf Hola, soy Manuel}\\
+    \textbf{Hola, soy Manuel}
+    
+    \noindent Hola, soy Manuel\\
+    \textit{Hola, soy Manuel}\\
+    \textsl{Hola, soy Manuel}\\
+    \textsc{Hola, soy Manuel}\\
+    \emph{Hola, soy Manuel}
+    
+    
+    
+    \newpage 
+    \noindent 
+    \textcolor{amaranth}{Hola mundo\, \LaTeX}
+    
+    
+\end{document}
+
+

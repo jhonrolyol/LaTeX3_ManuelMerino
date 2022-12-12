@@ -1,0 +1,282 @@
+% PREÁMBULO -------------------------------------
+  
+% Definir la clase de documento
+\documentclass[a4paper, 11pt]{article}
+
+% Codificación de entrada
+\usepackage[utf8]{inputenc}
+
+% Idioma
+\usepackage[spanish]{babel}
+
+% Geometría
+\usepackage[left = 2cm, right = 2.5cm, top = 3cm, bottom = 2.2cm]{geometry}
+
+% Inserción de figuras
+\usepackage{graphicx}
+
+% Hipervínculos
+\usepackage{hyperref}
+
+\usepackage{titlesec}
+
+% Matemáticas
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\newtheorem{defi}{Definición}[section]
+\newtheorem{lema}{Lema}[section]
+\newtheorem{teo}{Teorema}[section]
+\newtheorem{coro}{Corolario}[section]
+
+
+
+
+% Crear párrafos
+\usepackage{lipsum}
+
+% Multicolumnas
+\usepackage{multicol}
+
+
+% Espacios en párrafos
+\usepackage{setspace}
+
+
+
+
+%Colores
+\usepackage{xcolor}
+\definecolor{gris}{gray}{0.9}
+\definecolor{azul}{rgb}{0.0, 0.48, 0.65}
+
+% Información del documento
+\author{Manuel Merino Huaman}
+\title{Modo matemático en \LaTeX}
+\date{26 de febrero de 2023}
+
+% Configuraciones en los listados de texto - Numerados
+%% Nivel 1
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\arabic{enumi}.}
+
+%% Nivel 2
+\renewcommand{\theenumii}{\alph{enumii}}
+\renewcommand{\labelenumii}{\arabic{enumii}.$\alph{enumii}$}
+
+%% Nivel 3
+\renewcommand{\theenumiii}{\roman{enumiii}}
+\renewcommand{\labelenumiii}{\roman{enumiii})}
+
+%% Nivel 4
+\renewcommand{\theenumiv}{\alph{enumiv}}
+\renewcommand{\labelenumiv}{\alph{enumiv}.}
+
+% Configuraciones en los listados de texto - No numerados
+%% Nivel 1
+\renewcommand{\labelitemi}{$\checkmark$}
+
+%% Nivel 2
+\renewcommand{\labelitemii}{$\bigstar$}
+
+%% Nivel 3
+\renewcommand{\labelitemiii}{$\dagger$}
+
+%% Nivel 4
+\renewcommand{\labelitemiv}{$\circledast$}
+
+% Creación de comandos
+%% Números naturales
+\newcommand{\N}{\mathbb{N}}
+%% Números enteros
+\newcommand{\Z}{\mathbb{Z}}
+%% Números racionales
+\newcommand{\Q}{\mathbb{Q}}
+%% Números irracionales
+\newcommand{\I}{\mathbb{I}}
+%% Números reales
+\newcommand{\R}{\mathbb{R}}
+%% Números complejos
+\newcommand{\C}{\mathbb{C}}
+
+% Crear funciones trigonométricas inversas
+\newcommand{\arccot}{\text{arccot}}
+\newcommand{\arcsec}{\text{arcsec}}
+\newcommand{\arccsc}{\text{arccsc}}
+
+% Máximo entero
+\usepackage{mathabx}
+
+
+
+% Entorno del documento
+\begin{document}
+
+\maketitle
+
+\section{Introducción}
+    Si yo deseo escribir una fracción en un párrafo, hago uso del comando \verb|\frac{num}{den}| en modo matemático, en ,donde se obtiene $\frac{1}{2}$, donde \verb|num| es el numerador y \verb|den| es el denominador, por ejemplo si escribimos \verb|$$$\frac{1}{2}$| se obtiene $$\frac{1}{2}$$.
+    Si yo deseo escribir una fracción en un párrafo, hago uso del comando \verb|\frac{num}{den}| en modo matemático, en ,donde se obtiene $\frac{1}{2}$, donde \verb|num| es el numerador y \verb|den| es el denominador, por ejemplo si escribimos \verb|$\frac{1}{2}$| se obtiene $\frac{1}{2}$.
+    Si yo deseo escribir una fracción en un párrafo, hago uso del comando \verb|\frac{num}{den}| en modo matemático, en ,donde se obtiene $\frac{1}{2}$, donde \verb|num| es el numerador y \verb|den| es el denominador, por ejemplo si escribimos \verb|$$\dfrac{1}{2}$$| se obtiene $$\dfrac{1}{2}$$.
+    Si yo deseo escribir una fracción en un párrafo, hago uso del comando \verb|\frac{num}{den}| en modo matemático, en ,donde se obtiene $\frac{1}{2}$, donde \verb|num| es el numerador y \verb|den| es el denominador, por ejemplo si escribimos \verb|$\frac{1}{2}$| se obtiene $\frac{1}{2}$.
+    Si yo deseo escribir una fracción en un párrafo, hago uso del comando \verb|\frac{num}{den}| en modo matemático, en ,donde se obtiene $\frac{1}{2}$, donde \verb|num| es el numerador y \verb|den| es el denominador, por ejemplo si escribimos \verb|$\frac{1}{2}$| se obtiene $\frac{1}{2}$. Otra opción es la siguiente $$ \frac{1}{2} + \frac{3}{5}$$
+    
+   \section{Delimitadores}
+      $$5(\frac{1}{2} + \frac{1}{3})$$
+      
+      $$5\left[\frac{1}{2} + \frac{1}{3}\right\}$$
+   \section{Fracciones}
+      $$ \dfrac{\frac{2}{5} + \frac{1}{3}}{\frac{1}{9}}$$
+
+   \section{Proposiciones lógicas}
+      $$ \neg p (\sim p), \quad p \vee q, \quad p \wedge q, \quad p \Rightarrow q, \quad p \Leftrightarrow q $$
+    \section{Conjuntos}
+      $$A = \left\{1,2,\frac{3}{2},4,5\right\}$$
+    
+      $$A = \left\{x \in \mathbb{N}\;|\; 1 \leq n \leq 5\right\}$$
+    
+      $$\N, \Z, \Q, \I, \R, \C$$
+    
+      $$A \cup B, \quad A \cap B, \quad A \subset B, a \in A, \quad a \notin A, \quad A \not\subset B,\quad \emptyset, \quad \varnothing, \quad A^c, \quad C_M(A), \quad A-B, \quad A \backslash B $$
+      
+     \section{Funciones}
+       Sea la función $f: x \subset \R \to \R$, donde $y = f(x)$
+       \subsection{Polinomial}
+       $$f(x) = a_{n} x^{n} + a_{n-1} x^{n-1} + \ldots + a_{2} x^{2} + a_{1} x + a_{0}  $$
+       
+       $$f(x) = 3x^{3} + 5x^{2} - x + 1 $$
+     \section{Exponencial}
+       $$f(x) = a^{x}, \quad f(x) = e^{-x^{2}} = exp\left(-x^{2}\right)$$
+     
+     \section{Logaritmos}
+       $$\log_{b}\left(x\right), \quad \log\left(x\right), \quad \ln\left(x\right) $$
+     
+     \section{Trigonométrica}
+       $$\sen(x), \quad \cos(x), \quad \tan(x), \quad \cot(x), \quad \sec(x), \quad \csc(x), \quad \pi$$
+     
+     \section{Trigonométricas inversas}
+      $$\arcsen(x), \quad \arccos(x), \quad \arctan(x), \quad \arccot(x), \quad \arcsec(x), \quad \arccsc(x)$$
+     
+     \section{Valor absoluto}
+       $$\left|\frac{x}{2}\right|, \quad \left\vert\frac{x}{2}\right\vert$$
+     
+     \section{Máximo entero}
+       $$[x], \quad \lfloor x\rfloor, \quad \ldbrack x\rdbrack $$
+     
+     \section{Signo}
+       $$\text{sgn}(x) = \begin{cases}
+                           1, & x > 0 \\
+                           0, & x = 0\\
+                           -1, & x < 0
+                         \end{cases} = \left\{ \begin{array}{rc}
+                                                    1, & x > 0 \\
+                                                    0, & x = 0\\
+                                                    -1, & x < 0 
+                                             \end{array}\right.$$
+     
+     \section{Límites}
+     $\lim_{x \to a} f(x)$ \lipsum[5]
+     
+       $$\left(\lim_{x \to a} f(x) = L\right) := \left( \forall \varepsilon  > 0, \exists\delta(\varepsilon) > 0, x \in \text{Dom}(f), 0 < | x - a| < \delta \Rightarrow |f(x) = L| < \varepsilon \right)$$
+       
+     \section{Derivadas}
+     
+         $$ f'(x), \frac{df}{d(x)}, \frac{d^2f}{dx^2}, \frac{\partial F}{\partial x}, \frac{\partial ^2F}{\partial x\partial y}, \dot{x}(t), \ddot{x}(t) $$
+     
+     \section{Integrales}
+     
+          $$  \int f(x)dx, \int_{0}^{1} f(x)dx, \iint_{D} f(u)du, \in_{a}^{b}\int_{c}^{d}f(x,y)dxdy, 
+          \iiint_{D}f(v)dv, \oint_{L}f(s)ds $$
+      
+          
+     \section{Suseciones}
+     
+        $$ f: \N \to X \subset \R, \qquad \left( x_{n} \right)_{n \in \N} \subset \R, 
+        \qquad f(n) = x_{n} \qquad \text{Ran}(f) = \left\{x_{1},x_{2}, \ldots,x_{3},\ldots \right\}
+        = \left\{x_{n}\right\}_{n \in \N}$$ 
+      
+      
+     \section{Series}
+      
+        $$ \sum_{i=1}^{n}x_{i} , \sum_{i=1}^{\infty} x_{n} $$
+      
+
+     \section{Productoria}    
+       
+       $\prod_{i=1}^{n}x_{n}$
+       
+       $$ \prod_{i=1}^{n}x_{n} $$
+         
+         
+     \section{Extras}
+        
+       $$ \Vert x \Vert, (x,y), \langle x,y \rangle, <x, y>, \bigcap_{i=1}^{n}A_{i}, \bigcup_{i=1}^{n}A_{i}, \mu, \sigma^{2}, \overline{X}, \overline{x}, S^{2} $$
+    
+     \section{Escritura de ecuaciones}
+        
+        \begin{equation}
+            x^{2} + y^{2} = r^{2} \label{eq: circ}
+        \end{equation}
+       
+        De la ecuación \eqref{eq: circ}
+        
+       \begin{align}
+           f\left(\alpha_{1}x_{1} + \cdots + \alpha_{n}x_{n}\right) &= f\left(\alpha_{1}x_{1} +\beta \left( \frac{\alpha_{2}}{\beta}x_{2} + \cdots + \frac{\alpha_{n}}{\beta}x_{n}\right)\right) \leq  \notag\\
+           & \leq \alpha_{1}f(x_{1}) + \beta f\left(\frac{\alpha_{2}}{\beta} + \cdots + \frac{\alpha_{n}}{\beta}x_{n}\right) \notag 
+       \end{align}
+    
+       \begin{align*}
+           f\left(\alpha_{1}x_{1} + \cdots + \alpha_{n}x_{n}\right) &= f\left(\alpha_{1}x_{1} +\beta \left( \frac{\alpha_{2}}{\beta}x_{2} + \cdots + \frac{\alpha_{n}}{\beta}x_{n}\right)\right) \leq  \\
+           & \leq \alpha_{1}f(x_{1}) + \beta f\left(\frac{\alpha_{2}}{\beta} + \cdots + \frac{\alpha_{n}}{\beta}x_{n}\right) 
+       \end{align*}
+       
+       
+        \begin{equation}
+            \begin{aligned}
+                f\left(\alpha_{1}x_{1} + \cdots + \alpha_{n}x_{n}\right) &= f\left(\alpha_{1}x_{1} +\beta \left( \frac{\alpha_{2}}{\beta}x_{2} + \cdots + \frac{\alpha_{n}}{\beta}x_{n}\right)\right) \leq  \\
+                & \leq \alpha_{1}f(x_{1}) + \beta f\left(\frac{\alpha_{2}}{\beta} + \cdots + \frac{\alpha_{n}}{\beta}x_{n}\right)     
+            \end{aligned}
+        \end{equation}
+    
+     
+     \section{Entornos matemáticos}
+      
+        \begin{defi}[Sucesión]
+            \lipsum[9] 
+        \end{defi}
+        
+        
+        \begin{lema}
+          \lipsum[8]
+        \end{lema}
+        
+        
+        \begin{teo}
+            \lipsum[7]
+        \end{teo}
+
+
+        \begin{proof}
+          \lipsum[6]
+        \end{proof}
+     
+     \section{Arreglos}
+      
+      $$ u = (2.3, -9.98, 8.1),\qquad  u' = \left(\begin{array}{r}
+                                         2.30\\
+                                        -9.98\\
+                                         8.10
+                                     \end{array} \right)$$
+      
+       
+       \begin{equation*}
+          A = \left( \begin{array}{rrr}
+                    76 & 1 & 81\\
+                    -8 & 20 & 1 \\
+                     0 & -2 & 15
+              \end{array} \right)
+       \end{equation*}
+       
+\end{document}
+
