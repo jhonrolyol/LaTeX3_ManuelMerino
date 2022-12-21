@@ -1,0 +1,83 @@
+% Capítulo 5: Marco Teórico
+	\chapter{Marco Teórico}\label{Cap: Marco Teórico}
+		Como se menciona en el trabajo de \cite{Johnson-1987}, la revisión de \lipsum[10]
+		Consider the following first-order vector difference equation: 
+		\begin{equation}\label{eq: MED}
+			\left[
+			\begin{array}{c}
+				y_{t}  \\
+				y_{t-1}\\
+				y_{t-2}\\
+				\vdots \\
+				y_{t-p+1}
+			\end{array}
+			\right] =
+			\left[
+			\begin{array}{cccccc}
+				\phi_{1} & \phi_{2} & \phi_{3} & \cdots & \phi_{p-1} & \phi_{p}\\
+				1    &    0     &    0     & \cdots &      0     &     0   \\
+				0    &    1     &    0     & \cdots &      0     &     0   \\
+				\vdots  &  \vdots  &  \vdots  & \cdots &   \vdots   &  \vdots \\
+				0    &    0     &    0     & \cdots &      1     &     0   \\
+			\end{array}
+			\right]
+			\left[
+			\begin{array}{c}
+				y_{t-1}\\
+				y_{t-2}\\
+				y_{t-3}\\
+				\vdots \\
+				y_{t-p}
+			\end{array}
+			\right] + 
+			\left[
+			\begin{array}{c}
+				w_{t}\\
+				0    \\
+				0    \\
+				\vdots \\
+				0
+			\end{array}
+			\right]
+		\end{equation}
+		% Sección 5.1: Marco Histórico
+			\section{ Marco Histórico}\label{Sec: Marco Histórico}
+				\lipsum[11].
+				\begin{equation}\label{eq: LAG1}
+					y_{t} = (a + bL)Lx_{t}
+				\end{equation}
+				is exactly the same as
+				\begin{equation}\label{LAG2}
+					y_{t} = (aL + bL^{2})x_{t} = ax_{t-1} + bx_{t-2}
+				\end{equation}
+				To take another example, 
+				\begin{equation}\label{eq: LAG3}
+					\begin{aligned}
+						(1-\lambda_{1}L)(1-\lambda_{2}L)x_{t} &= 
+						(1-\lambda_{1}L-\lambda_{2}L + \lambda_{1}\lambda_{2}L^{2})x_{t}\\
+						&= 
+						(1-\left[\lambda_{1}+\lambda_{2}\right]L + \lambda_{1}\lambda_{2}L^{2})x_{t}\\
+						&= 
+						x_{t}-(\lambda_{1} + \lambda_{2})x_{t-1} + (\lambda_{1}\lambda_{2})x_{t-2}
+					\end{aligned}
+				\end{equation}
+		% Sección 5.2: Sistema Teórico
+			\section{Sistema Teórico}\label{Sec: Sistema Teórico}
+				\lipsum[12].
+				Gráfica estadisticas:
+				\begin{figure}[H]
+					\centering
+					\begin{tikzpicture}[scale = 1.2]
+						\pie{10/{NSP}, 20/{Aprobados}, 30/{Retirados}, 35/{Jalados}, 5/{Susti con fe}}
+					\end{tikzpicture}
+					\caption{Resultados}
+					\label{fig: Pie}
+				\end{figure}
+		% Sección 5.3: Marco Conceptual 
+			\section{Marco Conceptual }\label{Sec: Marco Conceptual }
+				\lipsum[13]
+		% Sección 5.4: Marco Referencial
+			\section{Marco Referencial}\label{Sec: Marco Referencial}
+				\lipsum[14]	
+					
+	

@@ -1,0 +1,138 @@
+% Preamble
+	\documentclass[12pt,a4paper,openany]{book}
+	% Packages
+	\usepackage[utf8]{inputenc}
+	\usepackage[T1]{fontenc}
+	\usepackage{amsfonts}
+	\usepackage{amsmath}
+	\usepackage{amssymb}
+	\usepackage{graphicx}
+	\usepackage[spanish,es-tabla]{babel}
+	\usepackage{makeidx}
+	%\usepackage{natbib} % Genera conflicto
+	\usepackage{lmodern}
+	\usepackage{listings}
+	\usepackage{xfrac}
+	\usepackage{fix-cm}
+	\usepackage{setspace}
+	\usepackage{fancyhdr}
+	\usepackage{appendix}
+	\usepackage{titlesec}
+	\usepackage{xcolor}
+	\usepackage{varioref}
+	\usepackage{url}
+	\usepackage{hyperref}
+	\usepackage[left= 2.54cm, right=2.54cm, top=2.54cm, bottom=2.54cm]{geometry}
+	\usepackage{setspace}
+	\usepackage{lipsum}
+	\usepackage{times}
+	\usepackage{caption}
+	\usepackage{subcaption}
+	\usepackage{float}
+	\usepackage{booktabs} 
+	%\usepackage{cite} % Genera conflicto
+	\usepackage{tikz}
+	\usepackage{pgf-pie}
+	% Customize
+	\linespread{1.5}
+		% Annex
+		\newcommand{\annexname}{Annex}
+		\makeatletter
+		\newcommand\annex{\par
+			\setcounter{chapter}{0}
+			\setcounter{section}{0}
+			\gdef\@chapapp{\annexname}
+			\gdef\thechapter{\@Roman\c@chapter}}
+		\makeatother
+		% Caption
+		\captionsetup[table]{
+			name = Tabla,
+			labelsep = newline,
+			justification = raggedright,
+			singlelinecheck = false,
+			labelfont = bf
+		}
+		% Path for Graphs
+		\graphicspath{{Imagenes/}}
+		% Define colors
+		\definecolor{gris}{gray}{0.9}
+		\definecolor{azul}{rgb}{0.0, 0.48, 0.65}
+		\definecolor{Azul}{rgb}{0.17, 0.4, 0.69}
+		% Programs code	
+		\definecolor{codegreen}{rgb}{0,0.6,0}
+		\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+		\definecolor{codepurple}{rgb}{0.58,0,0.82}
+		\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+		\lstdefinestyle{mystyle}{
+			backgroundcolor=\color{backcolour},   
+			commentstyle=\color{codegreen},
+			keywordstyle=\color{magenta},
+			numberstyle=\tiny\color{codegray},
+			stringstyle=\color{codepurple},
+			identifierstyle=\color{blue},
+			basicstyle=\ttfamily\footnotesize,
+			breakatwhitespace=false,         
+			breaklines=true,                 
+			captionpos=b,                    
+			keepspaces=true,
+			numbers=left,                    
+			numbersep=5pt,                  
+			showspaces=false,                
+			showstringspaces=false,
+			showtabs=false,                  
+			tabsize=2
+		}
+		\lstset{style=mystyle}
+		% Hypersetup
+		\definecolor{linkcolorred}{HTML}{FF3333}
+		\definecolor{urlcolorblue}{HTML}{336BFF}
+		\hypersetup{pdfstartview=FitH, 
+			linkcolor= linkcolorred, 
+			urlcolor=urlcolorblue,
+			citecolor = blue, 
+			colorlinks=True}
+	  
+% Document
+	\begin{document}
+		% FrontMatter
+		% Inicio ----------------------------------------------
+			\frontmatter
+			% Carátula
+				\include{Caratula/Caratula}
+			% Dedicatoria
+				\include{Capitulos/Dedicatoria}
+			% Agradecimiento
+				\include{Capitulos/Agradecimiento}
+			% Indice
+				\tableofcontents
+				\listoffigures
+				\listoftables
+		% MainMatter
+		% Centro -----------------------------------------------	
+			\mainmatter
+			% Capítulo 1: Introducción
+				\include{Capitulos/Introduccion}
+			% Capítulo 2: Planteamiento del Problema
+				\include{Capitulos/PlanteamientoDelProblema}
+			% Capítulo 3: Objetivos
+				\include{Capitulos/Objetivos}
+		    % Capítulo 4: Justificación
+		    	\include{Capitulos/Justificacion}	
+		    % Capítulo 5: Marco Teórico
+		    	\include{Capitulos/MarcoTeorico}
+		    % Capítulo 6: Hipótesis
+		    	\include{Capitulos/Hipotesis}
+		    % Capítulo 7: Variable e Indicadores
+		    	\include{Capitulos/VariablesEIndicadores}
+		    % Capítulo 8: Metodología
+		    	\include{Capitulos/Metodologia}
+		% BackMatter 
+	    % Final ------------------------------------------------
+	    	\backmatter
+			% Bibliografía
+				\bibliographystyle{apalike}
+				\bibliography{Bibliografia/Bibliografia}
+			% Apendice
+				\include{Anexo/Anexo}
+	\end{document}
+
